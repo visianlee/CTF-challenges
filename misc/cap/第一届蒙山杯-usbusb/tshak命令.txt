@@ -1,0 +1,2 @@
+tshark -r usbusb.pcapng -T fields -e usb.capdata >usbdata.txt  # 将usbusb.pcapng中的usb数据导出，并保存为usbdata.txt 
+tshark -r usbusb.pcapng -T fields -e usb.capdata | sed '/^s*$/d' > usbdata.txt  #sed '/^s*$/d'正则删除空行
